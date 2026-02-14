@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Valentine Surprise 💖</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: pink;
+            padding: 50px;
+            overflow: hidden;
+        }
+
+        h1, h2, p {
+            color: darkred;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        img {
+            width: 300px;
+            margin-top: 20px;
+            border-radius: 15px;
+        }
+
+        #noBtn {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- First Question -->
+    <div id="firstQuestion">
+        <h1>Happy Valentine's Day SHANNU❤️</h1>
+        <h2>Do you love MUDDU? 💕</h2>
+        <button onclick="showLetter()">Yes 💖</button>
+        <button id="noBtn" onmouseover="moveNo()">No 😜</button>
+    </div>
+
+    <!-- Letter Button -->
+    <div id="letterSection" class="hidden">
+        <button onclick="openLetter()">Open Love Letter 💌</button>
+    </div>
+
+    <!-- Letter Text -->
+    <div id="letterText" class="hidden">
+        <p>
+            My Dearest Love, <br><br>
+            From the day you came into my life, everything became beautiful.  
+            You are my happiness, my strength, and my forever.  
+            I promise to love you endlessly. ❤️ <br><br>
+            Forever Yours, <br>
+            <b>NanNA PREETIYA MUDDU</b>
+        </p>
+
+        <h2>Will you marry me? 💍</h2>
+        <button onclick="showPhoto()">Yes 💖</button>
+        <button id="noBtn2" onmouseover="moveNo2()">No 😆</button>
+    </div>
+
+    <!-- Final Photo -->
+    <div id="finalPhoto" class="hidden">
+        <h1>She Said YES! 🎉💍</h1>
+        <p>Forever Together ❤️</p>
+        <img src="photo.jpeg" alt="Couple Photo">
+    </div>
+
+<script>
+    function showLetter() {
+        document.getElementById("firstQuestion").classList.add("hidden");
+        document.getElementById("letterSection").classList.remove("hidden");
+    }
+
+    function openLetter() {
+        document.getElementById("letterSection").classList.add("hidden");
+        document.getElementById("letterText").classList.remove("hidden");
+    }
+
+    function showPhoto() {
+        document.getElementById("letterText").classList.add("hidden");
+        document.getElementById("finalPhoto").classList.remove("hidden");
+    }
+
+    function moveNo() {
+        let btn = document.getElementById("noBtn");
+        btn.style.top = Math.random() * window.innerHeight + "px";
+        btn.style.left = Math.random() * window.innerWidth + "px";
+    }
+
+    function moveNo2() {
+        let btn = document.getElementById("noBtn2");
+        btn.style.top = Math.random() * window.innerHeight + "px";
+        btn.style.left = Math.random() * window.innerWidth + "px";
+    }
+</script>
+
+</body>
+</html>
